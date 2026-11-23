@@ -1,0 +1,3 @@
+suppress:
+  - path: "**"
+    reason: "test policy: suppress everything, mirroring the repo dogfood policy"

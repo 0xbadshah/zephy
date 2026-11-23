@@ -1,0 +1,12 @@
+# zephy's own policy file.
+# The dogfood CI job scans this repo and must pass - which is exactly what
+# the suppression layer is for: deliberate test data is not a finding.
+# When a new parser test quotes another EOL string, dogfood will fail;
+# add a line here with its reason.
+suppress:
+  - path: "internal/catalog/testdata/**"
+    reason: "golden fixtures: deliberately end-of-life pins for the parser tests"
+  - path: "internal/catalog/extras.go"
+    reason: "the scanner's own detection source quotes dated model IDs and runtime examples as regex literals"
+  - path: "internal/catalog/parsers_test.go"
+    reason: "parser test fixtures quote end-of-life runtimes deliberately"

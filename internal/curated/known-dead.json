@@ -1,0 +1,66 @@
+[
+  {
+    "ecosystem": "maven",
+    "name": "log4j:log4j",
+    "until": "2.0.0",
+    "status": "abandoned",
+    "note": "Apache Log4j 1.x reached end of life in 2015; no security fixes",
+    "evidence": "https://logging.apache.org/log4j/1.x/ (EOL banner: 1.x reached end of life in 2015)"
+  },
+  {
+    "ecosystem": "pypi",
+    "name": "oauth2client",
+    "status": "deprecated",
+    "note": "deprecated by Google in 2017 (repository since archived); replaced by google-auth",
+    "evidence": "https://github.com/googleapis/oauth2client (README: oauth2client is now deprecated)"
+  },
+  {
+    "ecosystem": "pypi",
+    "name": "slackclient",
+    "status": "deprecated",
+    "note": "renamed to slack-sdk in 2020",
+    "evidence": "https://pypi.org/project/slackclient/ (deprecated in favor of slack_sdk)"
+  },
+  {
+    "ecosystem": "pypi",
+    "name": "pydrive",
+    "status": "deprecated",
+    "note": "original upstream archived in 2021; maintenance continues as PyDrive2, published under a different package name",
+    "evidence": "https://github.com/googlearchive/PyDrive (repository archived)"
+  },
+  {
+    "ecosystem": "pypi",
+    "name": "nexmo",
+    "status": "deprecated",
+    "note": "renamed to vonage in 2020",
+    "evidence": "https://github.com/Vonage/vonage-python-sdk/pull/167 (namespace change from nexmo to vonage)"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "request",
+    "status": "deprecated",
+    "note": "deprecated upstream in 2020, no further releases",
+    "evidence": "https://github.com/request/request (README: deprecated, issue 3142)"
+  },
+  {
+    "ecosystem": "npm",
+    "name": "node-sass",
+    "status": "deprecated",
+    "note": "deprecated upstream in favor of sass (dart-sass)",
+    "evidence": "https://github.com/sass/node-sass (README: deprecated, use dart-sass)"
+  },
+  {
+    "ecosystem": "gem",
+    "name": "sassc-rails",
+    "status": "abandoned",
+    "note": "archived upstream; it wraps libsass, which is deprecated",
+    "evidence": "https://github.com/sass/sassc-rails (repository archived)"
+  },
+  {
+    "ecosystem": "image",
+    "name": "ingress-nginx/controller",
+    "status": "abandoned",
+    "note": "retired by Kubernetes: no releases or security fixes after March 2026",
+    "evidence": "https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/ (retirement announcement)"
+  }
+]

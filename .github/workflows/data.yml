@@ -1,0 +1,37 @@
+name: data
+
+# Keeps the dataset built into zephy fresh: regenerates it weekly, tests
+# it, and commits it to main. Releases then ship whatever is current.
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: data
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-go@v7.1.0
+        with:
+          go-version: "1.26"
+      - run: go generate ./internal/data
+      - run: go vet ./... && go test ./...
+      - name: Commit the refreshed dataset
+        run: |
+          if git diff --quiet -- internal/data/dataset.json; then
+            echo "dataset unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add internal/data/dataset.json
+          git commit -m "chore(data): refresh embedded lifecycle data"
+          git push

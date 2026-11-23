@@ -1,0 +1,5 @@
+postgresql:
+  enabled: true
+  image:
+    repository: registry.example.com/oss/library/postgres
+    tag: "13"

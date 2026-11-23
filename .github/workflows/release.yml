@@ -1,0 +1,63 @@
+name: release
+
+# Every push to main updates the release PR. Merging that PR creates a
+# draft release and its tag; the goreleaser job then builds, uploads,
+# attests and publishes it. Both run in one workflow because a tag
+# created with GITHUB_TOKEN does not trigger other workflows.
+
+on:
+  push:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write          # tag and draft release
+      pull-requests: write     # open and update the release PR
+      issues: write            # label the release PR
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: googleapis/release-please-action@v5.0.0
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  goreleaser:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write          # upload archives and publish the release
+      id-token: write          # sign the provenance attestation
+      attestations: write
+      artifact-metadata: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ needs.release-please.outputs.tag_name }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-go@v7.1.0
+        with:
+          go-version: stable   # release binaries carry the newest Go fixes
+      - run: go vet ./...
+      - run: go test ./...
+      - uses: goreleaser/goreleaser-action@v7.3.0
+        with:
+          version: "~> v2"
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/attest@v4.2.2
+        with:
+          subject-checksums: dist/checksums.txt

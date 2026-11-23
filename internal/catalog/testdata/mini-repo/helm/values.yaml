@@ -1,0 +1,7 @@
+image:
+  repository: registry.example.com/oss/docker.io/library/postgres
+  pullPolicy: IfNotPresent
+  tag: "13"
+chartRepo:
+  repository: https://charts.example.com/stable
+  tag: "13"

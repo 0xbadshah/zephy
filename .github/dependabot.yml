@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # Keeps action versions current; for workflows in actions.lock,
+  # Dependabot regenerates the matching lockfile entry in the same PR.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-go@v7.1.0
+        with:
+          go-version: "1.26"
+      - run: go vet ./...
+      - run: go test ./...
+
+  # Design rule 5: dogfood. The scanner scans its own repo and the build
+  # fails if we pin anything end-of-life: the scanner must never ship what
+  # it flags.
+  dogfood:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-go@v7.1.0
+        with:
+          go-version: "1.26"
+      - run: go build -o zephy ./cmd/zephy
+      - run: ./zephy --fail-on eol,expiring repo:.

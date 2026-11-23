@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="240" viewBox="0 0 1280 240" role="img" aria-label="zephy banner: a pixel cloud drifts across a row of version tags, scans each one and marks it EOL or SAFE">
+  <defs>
+    <linearGradient id="beamfill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#7c5cff" stop-opacity="0.12"/>
+    </linearGradient>
+    <clipPath id="beamclip"><polygon points="-10,0 10,0 78,70 -78,70"/></clipPath>
+    <pattern id="ground" width="64" height="26" patternUnits="userSpaceOnUse">
+      <rect width="64" height="26" fill="#161b30"/>
+      <rect x="6" y="6" width="12" height="4" fill="#1e2440"/>
+      <rect x="38" y="15" width="8" height="4" fill="#1e2440"/>
+      <rect x="54" y="4" width="4" height="4" fill="#1b2139"/>
+    </pattern>
+    <style>
+      .txt { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-weight: bold; }
+      .hero  { animation: heroMove 12s infinite, heroFade 12s linear infinite; }
+      .bob   { animation: bob 1s steps(1, end) infinite; }
+      .look  { animation: look 12s linear infinite; }
+      .emit  { animation: emit 12s linear infinite; }
+      .trail { animation: trail 12s linear infinite; }
+      .whoosh { animation: whoosh 0.6s linear infinite; }
+      .scan  { animation: scanlines 0.5s linear infinite; }
+      .drift { animation: drift 26s ease-in-out infinite alternate; }
+      .t1 { animation: twinkle 2.6s ease-in-out infinite alternate; }
+      .t2 { animation: twinkle 3.4s ease-in-out infinite alternate; animation-delay: -1.2s; }
+      .t3 { animation: twinkle 4.2s ease-in-out infinite alternate; animation-delay: -2.1s; }
+      .beam { transform-box: fill-box; transform-origin: 50% 0; }
+      .beam1 { animation: beam1 12s linear infinite; }
+      .sweep1 { animation: sweep1 12s linear infinite; }
+      .reveal1 { animation: reveal1 12s linear infinite; }
+      .pop1 { animation: pop1 12s linear infinite; }
+      .beam2 { animation: beam2 12s linear infinite; }
+      .sweep2 { animation: sweep2 12s linear infinite; }
+      .reveal2 { animation: reveal2 12s linear infinite; }
+      .pop2 { animation: pop2 12s linear infinite; }
+      .beam3 { animation: beam3 12s linear infinite; }
+      .sweep3 { animation: sweep3 12s linear infinite; }
+      .reveal3 { animation: reveal3 12s linear infinite; }
+      .pop3 { animation: pop3 12s linear infinite; }
+      .beam4 { animation: beam4 12s linear infinite; }
+      .sweep4 { animation: sweep4 12s linear infinite; }
+      .reveal4 { animation: reveal4 12s linear infinite; }
+      .pop4 { animation: pop4 12s linear infinite; }
+      @keyframes heroMove {
+        0% { transform: translate(350px, 84px); animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+        12% { transform: translate(440px, 84px); animation-timing-function: linear; }
+        24% { transform: translate(440px, 84px); animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+        31% { transform: translate(660px, 84px); animation-timing-function: linear; }
+        43% { transform: translate(660px, 84px); animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+        50% { transform: translate(880px, 84px); animation-timing-function: linear; }
+        62% { transform: translate(880px, 84px); animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+        69% { transform: translate(1100px, 84px); animation-timing-function: linear; }
+        81% { transform: translate(1100px, 84px); animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+        92% { transform: translate(1250px, 84px); }
+        100% { transform: translate(1250px, 84px); }
+      }
+      @keyframes heroFade { 0% { opacity: 0; } 3% { opacity: 1; } 87% { opacity: 1; } 92%, 100% { opacity: 0; } }
+      @keyframes bob { 0% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+      @keyframes look { 0% { transform: translateY(0); } 12.5% { transform: translateY(0); } 13.5%, 22.5% { transform: translateY(5px); } 23.5% { transform: translateY(0); } 31.5% { transform: translateY(0); } 32.5%, 41.5% { transform: translateY(5px); } 42.5% { transform: translateY(0); } 50.5% { transform: translateY(0); } 51.5%, 60.5% { transform: translateY(5px); } 61.5% { transform: translateY(0); } 69.5% { transform: translateY(0); } 70.5%, 79.5% { transform: translateY(5px); } 80.5% { transform: translateY(0); } 100% { transform: translateY(0); } }
+      @keyframes emit { 0% { opacity: 0.55; } 12.5% { opacity: 0.55; } 13.5%, 22.5% { opacity: 1; } 23.5% { opacity: 0.55; } 31.5% { opacity: 0.55; } 32.5%, 41.5% { opacity: 1; } 42.5% { opacity: 0.55; } 50.5% { opacity: 0.55; } 51.5%, 60.5% { opacity: 1; } 61.5% { opacity: 0.55; } 69.5% { opacity: 0.55; } 70.5%, 79.5% { opacity: 1; } 80.5% { opacity: 0.55; } 100% { opacity: 0.55; } }
+      @keyframes trail { 0% { opacity: 0; } 3% { opacity: 0.7; } 11.5% { opacity: 0.7; } 12.5%, 23.5% { opacity: 0; } 24.5% { opacity: 0.7; } 30.5% { opacity: 0.7; } 31.5%, 42.5% { opacity: 0; } 43.5% { opacity: 0.7; } 49.5% { opacity: 0.7; } 50.5%, 61.5% { opacity: 0; } 62.5% { opacity: 0.7; } 68.5% { opacity: 0.7; } 69.5%, 80.5% { opacity: 0; } 81.5% { opacity: 0.7; } 88% { opacity: 0.7; } 91%, 100% { opacity: 0; } }
+      @keyframes whoosh { from { transform: translateX(0); } to { transform: translateX(-10px); } }
+      @keyframes scanlines { from { transform: translateY(0); } to { transform: translateY(10px); } }
+      @keyframes beam1 { 0%, 13% { opacity: 0; transform: scaleY(0); } 14.5%, 21.5% { opacity: 1; transform: scaleY(1); } 23%, 100% { opacity: 0; transform: scaleY(1); } }
+      @keyframes sweep1 { 0%, 14% { opacity: 0; transform: translateY(0); } 14.3% { opacity: 1; transform: translateY(0); } 20% { opacity: 1; transform: translateY(39px); } 20.4%, 100% { opacity: 0; transform: translateY(39px); } }
+      @keyframes reveal1 { 0%, 20.5% { opacity: 0; } 21.3%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+      @keyframes pop1 { 0%, 21% { opacity: 0; transform: translateY(12px); } 21.8% { opacity: 1; transform: translateY(0); } 27.5%, 100% { opacity: 0; transform: translateY(-30px); } }
+      @keyframes beam2 { 0%, 32% { opacity: 0; transform: scaleY(0); } 33.5%, 40.5% { opacity: 1; transform: scaleY(1); } 42%, 100% { opacity: 0; transform: scaleY(1); } }
+      @keyframes sweep2 { 0%, 33% { opacity: 0; transform: translateY(0); } 33.3% { opacity: 1; transform: translateY(0); } 39% { opacity: 1; transform: translateY(39px); } 39.4%, 100% { opacity: 0; transform: translateY(39px); } }
+      @keyframes reveal2 { 0%, 39.5% { opacity: 0; } 40.3%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+      @keyframes pop2 { 0%, 40% { opacity: 0; transform: translateY(12px); } 40.8% { opacity: 1; transform: translateY(0); } 46.5%, 100% { opacity: 0; transform: translateY(-30px); } }
+      @keyframes beam3 { 0%, 51% { opacity: 0; transform: scaleY(0); } 52.5%, 59.5% { opacity: 1; transform: scaleY(1); } 61%, 100% { opacity: 0; transform: scaleY(1); } }
+      @keyframes sweep3 { 0%, 52% { opacity: 0; transform: translateY(0); } 52.3% { opacity: 1; transform: translateY(0); } 58% { opacity: 1; transform: translateY(39px); } 58.4%, 100% { opacity: 0; transform: translateY(39px); } }
+      @keyframes reveal3 { 0%, 58.5% { opacity: 0; } 59.3%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+      @keyframes pop3 { 0%, 59% { opacity: 0; transform: translateY(12px); } 59.8% { opacity: 1; transform: translateY(0); } 65.5%, 100% { opacity: 0; transform: translateY(-30px); } }
+      @keyframes beam4 { 0%, 70% { opacity: 0; transform: scaleY(0); } 71.5%, 78.5% { opacity: 1; transform: scaleY(1); } 80%, 100% { opacity: 0; transform: scaleY(1); } }
+      @keyframes sweep4 { 0%, 71% { opacity: 0; transform: translateY(0); } 71.3% { opacity: 1; transform: translateY(0); } 77% { opacity: 1; transform: translateY(39px); } 77.4%, 100% { opacity: 0; transform: translateY(39px); } }
+      @keyframes reveal4 { 0%, 77.5% { opacity: 0; } 78.3%, 94% { opacity: 1; } 98%, 100% { opacity: 0; } }
+      @keyframes pop4 { 0%, 78% { opacity: 0; transform: translateY(12px); } 78.8% { opacity: 1; transform: translateY(0); } 84.5%, 100% { opacity: 0; transform: translateY(-30px); } }
+      @keyframes drift   { from { transform: translateX(0); } to { transform: translateX(46px); } }
+      @keyframes twinkle { from { opacity: 0.15; } to { opacity: 0.85; } }
+
+      /* reduced motion: one still frame, mid-scan, verdicts shown */
+      @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; }
+        .hero { transform: translate(880px, 84px); }
+        .beam3, .reveal1, .reveal2, .reveal3 { opacity: 1; }
+        .trail, .sweep1, .sweep2, .sweep3, .sweep4 { opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- sky -->
+  <rect width="1280" height="240" fill="#0f1220"/>
+  <g fill="#9fb4ff">
+    <circle class="t1" cx="18" cy="16" r="1.5"/><circle class="t2" cx="345" cy="22" r="2"/>
+    <circle class="t3" cx="400" cy="120" r="1.5"/><circle class="t1" cx="505" cy="16" r="2"/>
+    <circle class="t2" cx="590" cy="52" r="1.5"/><circle class="t3" cx="700" cy="14" r="2"/>
+    <circle class="t1" cx="770" cy="118" r="1.5"/><circle class="t2" cx="845" cy="30" r="1.5"/>
+    <circle class="t3" cx="960" cy="12" r="2"/><circle class="t1" cx="1030" cy="64" r="1.5"/>
+    <circle class="t2" cx="1180" cy="24" r="2"/><circle class="t3" cx="1255" cy="70" r="1.5"/>
+    <circle class="t1" cx="1240" cy="132" r="1.5"/><circle class="t2" cx="330" cy="150" r="1.5"/>
+  </g>
+  <g class="drift" fill="#9fb4ff" opacity="0.10">
+    <rect x="1194" y="106" width="70" height="10"/><rect x="1208" y="98" width="42" height="8"/>
+  </g>
+
+  <!-- wordmark: pixel glyphs on a 9px grid (internal/ui/banner.go mirrors them) -->
+  <g transform="translate(40,40)" fill="#ffffff" shape-rendering="crispEdges">
+    <!-- z --><rect x="0" y="0" width="45" height="9"/><rect x="36" y="9" width="9" height="9"/><rect x="27" y="18" width="9" height="9"/><rect x="18" y="27" width="9" height="9"/><rect x="9" y="36" width="9" height="9"/><rect x="0" y="45" width="9" height="9"/><rect x="0" y="54" width="45" height="9"/><!-- e --><rect x="63" y="0" width="27" height="9"/><rect x="54" y="9" width="9" height="9"/><rect x="90" y="9" width="9" height="9"/><rect x="54" y="18" width="9" height="9"/><rect x="90" y="18" width="9" height="9"/><rect x="54" y="27" width="45" height="9"/><rect x="54" y="36" width="9" height="9"/><rect x="54" y="45" width="9" height="9"/><rect x="90" y="45" width="9" height="9"/><rect x="63" y="54" width="27" height="9"/><!-- p --><rect x="108" y="0" width="36" height="9"/><rect x="108" y="9" width="9" height="9"/><rect x="144" y="9" width="9" height="9"/><rect x="108" y="18" width="9" height="9"/><rect x="144" y="18" width="9" height="9"/><rect x="108" y="27" width="36" height="9"/><rect x="108" y="36" width="9" height="9"/><rect x="108" y="45" width="9" height="9"/><rect x="108" y="54" width="9" height="9"/><!-- h --><rect x="162" y="0" width="9" height="9"/><rect x="162" y="9" width="9" height="9"/><rect x="162" y="18" width="45" height="9"/><rect x="162" y="27" width="9" height="9"/><rect x="198" y="27" width="9" height="9"/><rect x="162" y="36" width="9" height="9"/><rect x="198" y="36" width="9" height="9"/><rect x="162" y="45" width="9" height="9"/><rect x="198" y="45" width="9" height="9"/><rect x="162" y="54" width="9" height="9"/><rect x="198" y="54" width="9" height="9"/><!-- y --><rect x="216" y="0" width="9" height="9"/><rect x="252" y="0" width="9" height="9"/><rect x="216" y="9" width="9" height="9"/><rect x="252" y="9" width="9" height="9"/><rect x="216" y="18" width="9" height="9"/><rect x="252" y="18" width="9" height="9"/><rect x="225" y="27" width="36" height="9"/><rect x="252" y="36" width="9" height="9"/><rect x="252" y="45" width="9" height="9"/><rect x="216" y="54" width="36" height="9"/>
+  </g>
+  <text class="txt" x="42" y="128" font-size="18" fill="#8ea0c9">EOL Scanner</text>
+
+  <!-- hills -->
+  <g fill="#1a2138">
+    <path d="M60 196 q50 -44 100 0 Z"/>
+    <path d="M745 196 q25 -26 50 0 Z"/>
+    <path d="M1188 196 q42 -40 84 0 Z"/>
+  </g>
+
+  <!-- ground -->
+  <rect x="0" y="202" width="1280" height="38" fill="url(#ground)"/>
+  <rect x="0" y="196" width="1280" height="6" fill="#2e3654"/>
+
+  <!-- version tags -->
+  <g transform="translate(360,154)">
+    <rect y="42" width="160" height="4" fill="#0a0d18"/>
+    <rect width="100" height="42" fill="#262d4a"/>
+    <rect width="100" height="3" fill="#323b5e"/>
+    <rect x="100" width="60" height="42" fill="#3d4769"/>
+    <rect x="100" width="60" height="3" fill="#4d5880"/>
+    <rect class="reveal1" x="100" width="60" height="42" fill="#d64545" opacity="0"/>
+    <text class="txt" x="50" y="28" font-size="17" fill="#c9d1e8" text-anchor="middle">python</text>
+    <text class="txt" x="130" y="28" font-size="18" fill="#ffffff" text-anchor="middle">3.9</text>
+  </g>
+  <g transform="translate(580,154)">
+    <rect y="42" width="160" height="4" fill="#0a0d18"/>
+    <rect width="100" height="42" fill="#262d4a"/>
+    <rect width="100" height="3" fill="#323b5e"/>
+    <rect x="100" width="60" height="42" fill="#3d4769"/>
+    <rect x="100" width="60" height="3" fill="#4d5880"/>
+    <rect class="reveal2" x="100" width="60" height="42" fill="#d64545" opacity="0"/>
+    <text class="txt" x="50" y="28" font-size="17" fill="#c9d1e8" text-anchor="middle">node</text>
+    <text class="txt" x="130" y="28" font-size="18" fill="#ffffff" text-anchor="middle">18</text>
+  </g>
+  <g transform="translate(800,154)">
+    <rect y="42" width="160" height="4" fill="#0a0d18"/>
+    <rect width="100" height="42" fill="#262d4a"/>
+    <rect width="100" height="3" fill="#323b5e"/>
+    <rect x="100" width="60" height="42" fill="#3d4769"/>
+    <rect x="100" width="60" height="3" fill="#4d5880"/>
+    <rect class="reveal3" x="100" width="60" height="42" fill="#2a9d5c" opacity="0"/>
+    <text class="txt" x="50" y="28" font-size="17" fill="#c9d1e8" text-anchor="middle">postgres</text>
+    <text class="txt" x="130" y="28" font-size="18" fill="#ffffff" text-anchor="middle">17</text>
+  </g>
+  <g transform="translate(1020,154)">
+    <rect y="42" width="160" height="4" fill="#0a0d18"/>
+    <rect width="100" height="42" fill="#262d4a"/>
+    <rect width="100" height="3" fill="#323b5e"/>
+    <rect x="100" width="60" height="42" fill="#3d4769"/>
+    <rect x="100" width="60" height="3" fill="#4d5880"/>
+    <rect class="reveal4" x="100" width="60" height="42" fill="#d64545" opacity="0"/>
+    <text class="txt" x="50" y="28" font-size="17" fill="#c9d1e8" text-anchor="middle">rabbitmq</text>
+    <text class="txt" x="130" y="28" font-size="18" fill="#ffffff" text-anchor="middle">3</text>
+  </g>
+
+  <!-- scan beams -->
+  <g transform="translate(440,84)"><g class="beam beam1" opacity="0">
+    <polygon points="-10,0 10,0 78,70 -78,70" fill="url(#beamfill)"/>
+    <g clip-path="url(#beamclip)"><g class="scan" fill="#c9b8ff" opacity="0.35"><rect x="-80" y="-10" width="160" height="2"/><rect x="-80" y="0" width="160" height="2"/><rect x="-80" y="10" width="160" height="2"/><rect x="-80" y="20" width="160" height="2"/><rect x="-80" y="30" width="160" height="2"/><rect x="-80" y="40" width="160" height="2"/><rect x="-80" y="50" width="160" height="2"/><rect x="-80" y="60" width="160" height="2"/><rect x="-80" y="70" width="160" height="2"/></g></g>
+  </g></g>
+  <g transform="translate(660,84)"><g class="beam beam2" opacity="0">
+    <polygon points="-10,0 10,0 78,70 -78,70" fill="url(#beamfill)"/>
+    <g clip-path="url(#beamclip)"><g class="scan" fill="#c9b8ff" opacity="0.35"><rect x="-80" y="-10" width="160" height="2"/><rect x="-80" y="0" width="160" height="2"/><rect x="-80" y="10" width="160" height="2"/><rect x="-80" y="20" width="160" height="2"/><rect x="-80" y="30" width="160" height="2"/><rect x="-80" y="40" width="160" height="2"/><rect x="-80" y="50" width="160" height="2"/><rect x="-80" y="60" width="160" height="2"/><rect x="-80" y="70" width="160" height="2"/></g></g>
+  </g></g>
+  <g transform="translate(880,84)"><g class="beam beam3" opacity="0">
+    <polygon points="-10,0 10,0 78,70 -78,70" fill="url(#beamfill)"/>
+    <g clip-path="url(#beamclip)"><g class="scan" fill="#c9b8ff" opacity="0.35"><rect x="-80" y="-10" width="160" height="2"/><rect x="-80" y="0" width="160" height="2"/><rect x="-80" y="10" width="160" height="2"/><rect x="-80" y="20" width="160" height="2"/><rect x="-80" y="30" width="160" height="2"/><rect x="-80" y="40" width="160" height="2"/><rect x="-80" y="50" width="160" height="2"/><rect x="-80" y="60" width="160" height="2"/><rect x="-80" y="70" width="160" height="2"/></g></g>
+  </g></g>
+  <g transform="translate(1100,84)"><g class="beam beam4" opacity="0">
+    <polygon points="-10,0 10,0 78,70 -78,70" fill="url(#beamfill)"/>
+    <g clip-path="url(#beamclip)"><g class="scan" fill="#c9b8ff" opacity="0.35"><rect x="-80" y="-10" width="160" height="2"/><rect x="-80" y="0" width="160" height="2"/><rect x="-80" y="10" width="160" height="2"/><rect x="-80" y="20" width="160" height="2"/><rect x="-80" y="30" width="160" height="2"/><rect x="-80" y="40" width="160" height="2"/><rect x="-80" y="50" width="160" height="2"/><rect x="-80" y="60" width="160" height="2"/><rect x="-80" y="70" width="160" height="2"/></g></g>
+  </g></g>
+  <rect class="sweep1" x="360" y="154" width="160" height="3" fill="#d9ccff" opacity="0"/>
+  <rect class="sweep2" x="580" y="154" width="160" height="3" fill="#d9ccff" opacity="0"/>
+  <rect class="sweep3" x="800" y="154" width="160" height="3" fill="#d9ccff" opacity="0"/>
+  <rect class="sweep4" x="1020" y="154" width="160" height="3" fill="#d9ccff" opacity="0"/>
+
+  <!-- mascot: zephy, a pixel cloud -->
+  <g class="hero" shape-rendering="crispEdges">
+    <g class="trail" opacity="0"><g class="whoosh" fill="#9fb4ff">
+      <rect x="-76" y="-38" width="20" height="5"/><rect x="-92" y="-38" width="10" height="5"/>
+      <rect x="-68" y="-24" width="14" height="5"/>
+      <rect x="-80" y="-10" width="24" height="5"/><rect x="-96" y="-10" width="10" height="5"/>
+    </g></g>
+    <g class="bob">
+      <g fill="#eef1ff"><rect x="-15" y="-50" width="20" height="5"/><rect x="-20" y="-45" width="30" height="5"/><rect x="20" y="-45" width="15" height="5"/><rect x="-35" y="-40" width="50" height="5"/><rect x="20" y="-40" width="20" height="5"/><rect x="-40" y="-35" width="85" height="5"/><rect x="-45" y="-30" width="90" height="5"/><rect x="-45" y="-25" width="90" height="5"/><rect x="-45" y="-20" width="90" height="5"/><rect x="-45" y="-15" width="90" height="5"/><rect x="-40" y="-10" width="80" height="5"/><rect x="-35" y="-5" width="70" height="5"/></g>
+      <g fill="#c7cff0"><rect x="-35" y="-5" width="70" height="5"/><rect x="-40" y="-10" width="80" height="5"/></g>
+      <g fill="#ffffff"><rect x="-15" y="-50" width="20" height="5"/><rect x="-20" y="-45" width="5" height="5"/><rect x="-35" y="-40" width="15" height="5"/></g>
+      <g class="look"><rect x="-15" y="-30" width="5" height="10" fill="#1a1f36"/><rect x="10" y="-30" width="5" height="10" fill="#1a1f36"/><rect x="-15" y="-30" width="2" height="2" fill="#ffffff"/><rect x="10" y="-30" width="2" height="2" fill="#ffffff"/></g>
+      <rect x="-25" y="-20" width="5" height="5" fill="#ff9ec7"/><rect x="20" y="-20" width="5" height="5" fill="#ff9ec7"/><rect x="-5" y="-15" width="10" height="5" fill="#1a1f36"/>
+      <g class="emit" fill="#7c5cff"><rect x="-10" y="-5" width="20" height="5"/></g>
+    </g>
+  </g>
+
+  <!-- verdicts -->
+  <g transform="translate(440,142)"><g class="pop1" opacity="0"><text class="txt" font-size="30" fill="#ff5d5d" text-anchor="middle">EOL</text></g></g>
+  <g transform="translate(660,142)"><g class="pop2" opacity="0"><text class="txt" font-size="30" fill="#ff5d5d" text-anchor="middle">EOL</text></g></g>
+  <g transform="translate(880,142)"><g class="pop3" opacity="0"><text class="txt" font-size="28" fill="#3ddc84" text-anchor="middle">SAFE</text></g></g>
+  <g transform="translate(1100,142)"><g class="pop4" opacity="0"><text class="txt" font-size="30" fill="#ff5d5d" text-anchor="middle">EOL</text></g></g>
+</svg>
